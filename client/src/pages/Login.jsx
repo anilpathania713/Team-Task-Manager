@@ -134,9 +134,9 @@ export default function Login({ setIsLoggedIn }) {
                 <label htmlFor="password" className="text-sm font-medium text-slate-300">
                   Password
                 </label>
-                <a href="#" className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">
+                <button type="button" className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors bg-transparent border-none cursor-pointer p-0">
                   Forgot password?
-                </a>
+                </button>
               </div>
               <div className="relative">
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">

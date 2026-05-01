@@ -3,19 +3,6 @@ import { createProject, getProjects, createTask, getTasksByProject, updateTask }
 
 // --- Helper Components for Cleaner Code ---
 
-const StatusBadge = ({ status }) => {
-  const styles = {
-    todo: "bg-slate-100 text-slate-600 border-slate-200",
-    "in-progress": "bg-amber-50 text-amber-600 border-amber-200",
-    done: "bg-emerald-50 text-emerald-600 border-emerald-200",
-  };
-  return (
-    <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full border ${styles[status] || styles.todo}`}>
-      {status?.replace("-", " ")}
-    </span>
-  );
-};
-
 const EmptyState = ({ icon, title, subtitle }) => (
   <div className="flex flex-col items-center justify-center py-10 text-slate-400">
     <span className="text-4xl mb-3">{icon}</span>
