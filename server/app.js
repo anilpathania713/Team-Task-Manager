@@ -11,8 +11,8 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:3000",
-    "https://your-frontend-name.up.railway.app"
-  ],
+    process.env.FRONTEND_URL || "https://your-frontend-name.up.railway.app"
+  ].filter(Boolean),
   credentials: true
 }));
 
