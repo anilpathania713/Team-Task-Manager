@@ -1,22 +1,31 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+
 const authRoutes = require("./routes/authRoutes");
-const { auth } = require("./middleware/auth");
 const projectRoutes = require("./routes/projectRoutes");
 const taskRoutes = require("./routes/taskRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://your-frontend-name.up.railway.app"
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 
-const db = require("./config/db");
+require("./config/db");
+
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
 app.use("/api/auth", authRoutes);
-
 app.use("/api/projects", projectRoutes);
-
 app.use("/api/tasks", taskRoutes);
 
 const PORT = process.env.PORT || 5000;
