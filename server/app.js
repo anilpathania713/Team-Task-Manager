@@ -18,7 +18,7 @@ app.use(cors({
 
 app.use(express.json());
 
-require("./config/db");
+// require("./config/db");
 
 app.get("/", (req, res) => {
   res.send("API is running...");
